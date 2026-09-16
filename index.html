@@ -332,33 +332,35 @@
             ========================================================================== */
         .intro-text { font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; color: var(--brown-primary); font-weight: 500;}
         
-        /* Nombres más grandes y con brillo */
+        /* Nombres sin brillo */
         .names-title { 
-            font-size: 5rem; /* Aumentado */
+            font-size: 5rem;
             line-height: 1.1; 
             margin-bottom: 15px; 
             color: var(--brown-dark); 
-            text-shadow: 0 0 15px rgba(212,175,55,0.4), 0 0 30px rgba(212,175,55,0.2);
-            animation: textGlow 3s infinite alternate;
         }
-        .names-title span { font-family: var(--font-script); font-size: 3.2rem; display: block; margin: 5px 0; color: var(--gold); text-shadow: none; }
+        .names-title span { font-family: var(--font-script); font-size: 3.2rem; display: block; margin: 5px 0; color: var(--gold); }
         
-        @keyframes textGlow {
-            0% { text-shadow: 0 0 10px rgba(212,175,55,0.3), 0 0 20px rgba(212,175,55,0.1); }
-            100% { text-shadow: 0 0 20px rgba(212,175,55,0.7), 0 0 40px rgba(212,175,55,0.4); }
-        }
-        
-        /* Nombres de los padres más grandes y en manuscrita */
+        /* Nombres de los padres en manuscrita */
         .parents-section { margin: 20px 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-color); }
         .parents-section b { font-family: var(--font-sans); font-size: 0.9rem; color: var(--brown-dark); display: block; margin-bottom: 5px; letter-spacing: 2px; text-transform: uppercase; }
         .parents-names { font-family: var(--font-script); font-size: 2.4rem; color: var(--brown-primary); line-height: 1.2; margin-bottom: 15px; }
 
-        /* Invitación más grande */
+        /* Invitación */
         .invite-text { font-family: var(--font-sans); font-size: 1.1rem; letter-spacing: 3px; margin-top: 25px; color: var(--brown-dark); font-weight: 500;}
-        .invite-boda { font-family: var(--font-script); font-size: 4.8rem; margin-bottom: 25px; color: var(--brown-primary); text-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .invite-boda { font-family: var(--font-script); font-size: 4.8rem; margin-bottom: 25px; color: var(--brown-primary); }
 
-        .main-photo-wrapper { margin: 15px 0; padding: 5px; }
-        .main-photo { width: 260px; height: 380px; object-fit: cover; border-radius: 130px; border: 5px solid var(--cream); box-shadow: 0 15px 35px rgba(62,43,32,0.25), 0 0 0 2px var(--gold); transition: transform 0.5s ease; }
+        /* Fotografía principal completa (sin cortes) */
+        .main-photo-wrapper { margin: 15px 0; padding: 5px; width: 100%; max-width: 320px; }
+        .main-photo { 
+            width: 100%; 
+            height: auto; 
+            object-fit: contain; 
+            border-radius: 8px; 
+            border: 5px solid var(--cream); 
+            box-shadow: 0 15px 35px rgba(62,43,32,0.25), 0 0 0 2px var(--gold); 
+            transition: transform 0.5s ease; 
+        }
         .main-photo:hover { transform: scale(1.03); }
 
         .message-section { margin-top: 30px; }
@@ -367,7 +369,7 @@
         .message-section p { font-size: 1rem; line-height: 1.8; padding: 0 15px; font-style: italic; }
 
         .save-date-title { font-family: var(--font-sans); font-size: 0.95rem; letter-spacing: 3px; margin-bottom: 5px; margin-top: 35px; color: var(--brown-primary); font-weight: 600;}
-        .save-date-date { font-family: var(--font-title); font-size: 3rem; color: var(--brown-dark); margin-bottom: 5px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.05); }
+        .save-date-date { font-family: var(--font-title); font-size: 3rem; color: var(--brown-dark); margin-bottom: 5px; font-weight: 600; }
 
         .calendar-wrapper { width: 100%; max-width: 340px; margin: 20px auto; font-family: var(--font-sans); font-size: 0.95rem; }
         .calendar-month { text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; color: var(--brown-dark); }
@@ -392,7 +394,17 @@
             border: 1px solid rgba(212,175,55,0.3);
         }
         .dark-block h3, .dark-block h2, .dark-block p { color: var(--cream); }
-        .dark-block-img { width: 100%; height: 240px; object-fit: cover; border-radius: 8px; margin-top: 20px; border: 2px solid rgba(212,175,55,0.4); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .dark-block-img { 
+            width: 100%; 
+            height: auto; 
+            max-height: 450px;
+            object-fit: contain; 
+            border-radius: 8px; 
+            margin-top: 20px; 
+            border: 2px solid rgba(212,175,55,0.4); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            background-color: #261A13;
+        }
 
         /* ==========================================================================
             COLUMNA 2 (EVENTOS)
@@ -415,38 +427,22 @@
             100% { transform: translateY(0px); }
         }
 
-        .venue-name { font-family: var(--font-script); font-size: 3rem; color: var(--brown-primary); margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .venue-name { font-family: var(--font-script); font-size: 3rem; color: var(--brown-primary); margin-bottom: 5px; }
         .venue-address { font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; color: var(--text-color); margin-bottom: 10px; }
         .venue-time { font-family: var(--font-sans); font-weight: 600; font-size: 1.2rem; color: var(--brown-dark); margin: 5px 0 20px 0; letter-spacing: 1px; }
-
-        .map-container {
-            width: 100%;
-            height: 200px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 20px 0;
-            border: 2px solid rgba(197, 168, 128, 0.6);
-            box-shadow: 0 10px 25px rgba(62,43,32,0.12);
-            transition: transform 0.3s ease;
-        }
-        .map-container:hover { transform: scale(1.02); }
-        .map-container iframe { width: 100%; height: 100%; border: 0; }
 
         /* ==========================================================================
             COLUMNA 3 (DETALLES, GALERIA STACK, RSVP)
             ========================================================================== */
         
         .dress-code-title { font-family: var(--font-sans); font-size: 0.95rem; letter-spacing: 3px; margin-bottom: 10px; }
-        .colors { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
-        .color-swatch { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease; }
-        .color-swatch:hover { transform: translateY(-5px); }
 
-        /* Galería Stack (Fotos Apiladas) */
+        /* Galería Stack (Fotos completas) */
         .stack-gallery {
             position: relative;
             width: 100%;
             max-width: 320px;
-            height: 380px;
+            height: 400px; /* Ajuste para que las fotos verticales quepan bien */
             margin: 30px auto;
             perspective: 1000px;
             display: flex;
@@ -456,12 +452,13 @@
         .stack-card {
             position: absolute;
             top: 0;
-            width: 85%;
-            height: 320px;
-            border-radius: 12px;
+            width: 90%;
+            height: 350px;
+            border-radius: 8px;
             border: 4px solid var(--white);
             box-shadow: 0 15px 35px rgba(62,43,32,0.25);
-            object-fit: cover;
+            object-fit: contain;
+            background-color: var(--white);
             transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             cursor: pointer;
             transform-origin: bottom center;
@@ -538,10 +535,8 @@
                 <p class="intro-text fade-in">Juntos con<br>nuestras familias</p>
                 <div class="divider fade-in"><i class="fa-solid fa-heart" style="font-size: 0.8rem;"></i></div>
                 
-                <!-- Nombres más grandes y con brillo -->
                 <h1 class="names-title fade-in">JESÚS<span>y</span>EVA</h1>
                 
-                <!-- Padres más grandes y en manuscrita -->
                 <div class="parents-section fade-in">
                     <div style="margin-bottom: 15px;">
                         <b>Padres de la Novia</b>
@@ -549,11 +544,10 @@
                     </div>
                     <div>
                         <b>Padres del Novio</b>
-                        <div class="parents-names">Jesús <i class="fa-solid fa-cross" style="font-size: 1.2rem; margin: 0 4px; color: var(--gold);"></i> Isabel</div>
+                        <div class="parents-names">Jesús, Isabel <i class="fa-solid fa-cross" style="font-size: 1.2rem; margin-left: 4px; color: var(--gold);"></i></div>
                     </div>
                 </div>
 
-                <!-- Te invitamos más grande -->
                 <p class="invite-text fade-in">TE INVITAMOS A<br>NUESTRA</p>
                 <div class="invite-boda fade-in">Boda</div>
                 
@@ -617,10 +611,7 @@
                 <p class="venue-address fade-in">Apodaca, N.L.</p>
                 <p class="venue-time fade-in">6:00 P.M.</p>
                 
-                <div class="map-container fade-in">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.3214283556986!2d-100.1695183!3d25.7137067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662e98a10f51fa9%3A0xc6fb2c3720cb7ad1!2sCapilla%20San%20Miguel%20Arc%C3%A1ngel!5e1!3m2!1ses-419!2smx!4v1789503928580!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
-                <a href="https://maps.app.goo.gl/NxDrtAmMRYXhCWzEA?g_st=ic" target="_blank" class="btn fade-in"><i class="fa-solid fa-map-location-dot"></i> VER EN EL MAPA</a>
+                <a href="https://maps.app.goo.gl/NxDrtAmMRYXhCWzEA?g_st=ic" target="_blank" class="btn fade-in" style="margin-bottom: 20px;"><i class="fa-solid fa-map-location-dot"></i> VER EN EL MAPA</a>
 
                 <!-- RECEPCIÓN -->
                 <h2 class="fade-in" style="font-size: 2.5rem; margin-top: 70px;">RECEPCIÓN</h2>
@@ -633,9 +624,6 @@
                 <p class="venue-address fade-in">Apodaca, N.L.</p>
                 <p class="venue-time fade-in">7:00 P.M.</p>
                 
-                <div class="map-container fade-in">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.3233631501575!2d-100.1692534!3d25.7136478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662e926699bf583%3A0xe68502a61cbe7263!2sQuinta%20Casa%20Grande!5e1!3m2!1ses-419!2smx!4v1789504016014!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
                 <a href="https://maps.app.goo.gl/XzSjPNYi3CoiwoQX8" target="_blank" class="btn fade-in"><i class="fa-solid fa-map-location-dot"></i> VER EN EL MAPA</a>
 
             </div>
@@ -648,12 +636,6 @@
                     <div class="divider"><i class="fa-solid fa-user-tie" style="font-size: 0.8rem; color: var(--gold);"></i></div>
                     <p style="font-family: var(--font-title); font-size: 2rem; margin-bottom: 15px;">Traje y vestido de noche</p>
                     <p style="font-size: 0.95rem; font-style: italic; opacity: 0.9; margin-bottom: 20px;">Favor de evitar dorados y brillos</p>
-                    <div class="colors">
-                        <div class="color-swatch" style="background-color: #6B4F3F;"></div>
-                        <div class="color-swatch" style="background-color: #C8B6A6;"></div>
-                        <div class="color-swatch" style="background-color: #A38671;"></div>
-                        <div class="color-swatch" style="background-color: #3E2B20;"></div>
-                    </div>
                 </div>
 
                 <div class="elegant-box fade-in" style="text-align: center;">
