@@ -350,13 +350,13 @@
         .invite-text { font-family: var(--font-sans); font-size: 1.1rem; letter-spacing: 3px; margin-top: 25px; color: var(--brown-dark); font-weight: 500;}
         .invite-boda { font-family: var(--font-script); font-size: 4.8rem; margin-bottom: 25px; color: var(--brown-primary); }
 
-        /* Fotografía principal completa (sin cortes) */
-        .main-photo-wrapper { margin: 15px 0; padding: 5px; width: 100%; max-width: 320px; }
+        /* Fotografía principal en óvalo */
+        .main-photo-wrapper { margin: 15px 0; padding: 5px; }
         .main-photo { 
-            width: 100%; 
-            height: auto; 
-            object-fit: contain; 
-            border-radius: 8px; 
+            width: 260px; 
+            height: 380px; 
+            object-fit: cover; 
+            border-radius: 130px; 
             border: 5px solid var(--cream); 
             box-shadow: 0 15px 35px rgba(62,43,32,0.25), 0 0 0 2px var(--gold); 
             transition: transform 0.5s ease; 
@@ -442,7 +442,7 @@
             position: relative;
             width: 100%;
             max-width: 320px;
-            height: 400px; /* Ajuste para que las fotos verticales quepan bien */
+            height: 400px;
             margin: 30px auto;
             perspective: 1000px;
             display: flex;
@@ -544,7 +544,7 @@
                     </div>
                     <div>
                         <b>Padres del Novio</b>
-                        <div class="parents-names">Jesús e Isabel <i class="fa-solid fa-cross" style="font-size: 1.2rem; margin-left: 4px; color: var(--gold);"></i></div>
+                        <div class="parents-names">Jesús, Isabel <i class="fa-solid fa-cross" style="font-size: 1.2rem; margin-left: 4px; color: var(--gold);"></i></div>
                     </div>
                 </div>
 
@@ -604,7 +604,6 @@
                 <h2 class="fade-in" style="font-size: 2.5rem; margin-bottom: 5px; margin-top: 20px;">CEREMONIA<br>RELIGIOSA</h2>
                 <div class="divider fade-in"><i class="fa-solid fa-church" style="font-size: 0.8rem;"></i></div>
 
-                <!-- Elemento PNG sin fondo flotante -->
                 <img src="assets/ceremonia.png" alt="Capilla San Miguel Arcángel" class="venue-element fade-in">
                 
                 <div class="venue-name fade-in">Capilla San Miguel Arcángel</div>
@@ -617,7 +616,6 @@
                 <h2 class="fade-in" style="font-size: 2.5rem; margin-top: 70px;">RECEPCIÓN</h2>
                 <div class="divider fade-in"><i class="fa-solid fa-champagne-glasses" style="font-size: 0.8rem;"></i></div>
 
-                <!-- Elemento PNG sin fondo flotante -->
                 <img src="assets/recepcion.png" alt="Quinta Casa Grande" class="venue-element fade-in">
                 
                 <div class="venue-name fade-in">Quinta Casa Grande</div>
